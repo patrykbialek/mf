@@ -1,4 +1,14 @@
+// const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const mf = require("@angular-architects/module-federation/webpack");
+const path = require("path");
+
+const sharedMappings = new mf.SharedMappings();
+sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), [
+  "shared-lib",
+  "mfe-api",
+]);
 
 module.exports = {
   output: {
@@ -13,14 +23,24 @@ module.exports = {
       name: "mfe2",
       filename: "remoteEntry.js",
       exposes: {
-        './Analyze': './projects/mfe2/src/app/analyze.component.ts',
-        './Enrich': './projects/mfe2/src/app/enrich.component.ts'
+        './Meetings': './projects/mfe2/src/app/meetings.component.ts',
+        "./Module": "./projects/mfe2/src/app/app.module.ts",
       },
       shared: {
-        "@angular/core": { singleton: true, strictVersion: true }, 
-        "@angular/common": { singleton: true, strictVersion: true }, 
-        "@angular/router": { singleton: true, strictVersion: true }
-      }
+        "@angular/core": { singleton: true, strictVersion: true },
+        "@angular/common": { singleton: true, strictVersion: true },
+        "@angular/router": { singleton: true, strictVersion: true },
+
+        "@shared-lib": {
+          singleton: true,
+          import: "projects/shared-lib/src/public-api",
+        },
+
+        // Uncomment for sharing lib of an Angular CLI or Nx workspace
+        ...sharedMappings.getDescriptors(),
+      },
     }),
-  ]
+    // Uncomment for sharing lib of an Angular CLI or Nx workspace
+    sharedMappings.getPlugin(),
+  ],
 };

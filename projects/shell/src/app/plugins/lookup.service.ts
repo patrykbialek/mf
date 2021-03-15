@@ -1,42 +1,27 @@
 import { Injectable } from '@angular/core';
-import { PluginOptions } from './plugin';
+
+import { PluginOption } from './plugin';
 
 @Injectable({ providedIn: 'root' })
 export class LookupService {
-    lookup(): Promise<PluginOptions[]> {
+    lookup(): Promise<PluginOption[]> {
         return Promise.resolve([
             {
                 remoteEntry: 'http://localhost:3000/remoteEntry.js',
                 remoteName: 'mfe1',
-                exposedModule: './Download',
+                exposedModule: './Patients',
 
-                displayName: 'Download',
-                componentName: 'DownloadComponent'
-            },
-            {
-                remoteEntry: 'http://localhost:3000/remoteEntry.js',
-                remoteName: 'mfe1',
-                exposedModule: './Upload',
-
-                displayName: 'Upload',
-                componentName: 'UploadComponent'
+                displayName: 'Patients',
+                componentName: 'PatientsComponent'
             },
             {
                 remoteEntry: 'http://localhost:3001/remoteEntry.js',
                 remoteName: 'mfe2',
-                exposedModule: './Analyze',
+                exposedModule: './Meetings',
 
-                displayName: 'Analyze',
-                componentName: 'AnalyzeComponent'
+                displayName: 'Meetings',
+                componentName: 'MeetingsComponent'
             },
-            {
-                remoteEntry: 'http://localhost:3001/remoteEntry.js',
-                remoteName: 'mfe2',
-                exposedModule: './Enrich',
-
-                displayName: 'Enrich',
-                componentName: 'EnrichComponent'
-            }
-        ] as PluginOptions[]);
+        ] as PluginOption[]);
     }
 }

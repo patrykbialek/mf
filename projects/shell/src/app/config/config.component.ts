@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { LookupService } from '../plugins/lookup.service';
-import { PluginOptions } from '../plugins/plugin';
+import { PluginOption } from '../plugins/plugin';
 
 @Component({
   selector: 'app-config',
@@ -10,7 +11,7 @@ export class ConfigComponent implements OnInit {
 
   constructor(private lookupService: LookupService) { }
 
-  config: PluginOptions[];
+  config: PluginOption[];
 
   async ngOnInit() {
     this.config = await this.lookupService.lookup();

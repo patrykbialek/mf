@@ -1,22 +1,27 @@
 <ul>
     <li><img src="../assets/angular.png" width="50"></li>
-    <li><a href="#">Plugin-based Workflow Designer</a></li>
-    <li><a (click)="toggle()">Toggle Config</a></li>
-    <li><input type="text" placeholder="enter age" (keyup.enter)="setPatientFilters(age.value)" #age /></li>
-    <li><a (click)="setPatientFilters(age.value)">Set filters</a></li>
+    <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Module Federation with Angular</a></li>
+    <li><a [routerLink]="['/config']" routerLinkActive="router-link-active">Config</a></li>
 </ul>
 
-<div class="vertical-menu">
-    <a href="#" class="active">Tasks</a>
-    <a *ngFor="let p of plugins" (click)="add(p)">Add {{p.displayName}}</a>
-</div>
+<section>
+    <header>
+        <h1>Settings</h1>
+    </header>
 
-<ng-container *ngFor="let p of workflow; let last = last">
-    <plugin-proxy [options]="p"></plugin-proxy>
-    <i *ngIf="!last" class="arrow right" style=""></i>
-    <!-- <pre>{{ p | json }}</pre> -->
-</ng-container>
+    <form (ngSubmit)="setPatientFilters(age.value, date.value)" novalidate>
+        <input type="text" placeholder="enter age" #age />
+        <input type="text" placeholder="enter date" #date />
+        <button type="submit">Set filters</button>
+    </form>
 
-<p style="clear:both">&nbsp;</p>
-<p>&nbsp;</p>
-<app-config *ngIf="showConfig"></app-config>
+    <div class="vertical-menu">
+        <h2>App menu</h2>
+        <a [routerLink]="['/patients']" routerLinkActive="router-link-active" [state]="{ data: { filters: filters } }" >Patients</a>
+        <a [routerLink]="['/meetings']" routerLinkActive="router-link-active">Meetings</a>
+        <a [routerLink]="['/config']" routerLinkActive="router-link-active" >Config</a>
+    </div>
+</section>
+
+
+<router-outlet></router-outlet>

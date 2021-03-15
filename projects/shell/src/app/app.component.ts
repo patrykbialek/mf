@@ -1,53 +1,30 @@
-import { PluginOptions } from './plugins/plugin';
-import { Component, OnInit } from '@angular/core';
-import { LookupService } from './plugins/lookup.service';
+import { Component } from '@angular/core';
 import { StoreService } from '@shared-lib';
+
+import { PluginOption } from './plugins/plugin';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  plugins: PluginOptions[] = [];
-  workflow: PluginOptions[] = [];
+  plugins: PluginOption[] = [];
+  workflow: PluginOption[] = [];
   showConfig = false;
-
-  patientFilters = this.storeService.patientFilters$
-    .subscribe(data => console.log('app', data))
+  filters: any;
 
   constructor(
-    private lookupService: LookupService,
     private storeService: StoreService,
   ) {
   }
 
-  async ngOnInit(): Promise<void> {
-    this.plugins = await this.lookupService.lookup();
-
-    this.add({
-      remoteEntry: 'http://localhost:3000/remoteEntry.js',
-      remoteName: 'mfe1',
-      exposedModule: './Download',
-
-      displayName: 'Download',
-      componentName: 'DownloadComponent'
-    });
-  }
-
-  add(plugin: PluginOptions): void {
-    this.workflow.push(plugin);
-  }
-
-  toggle(): void {
-    this.showConfig = !this.showConfig;
-  }
-
-  setPatientFilters(age: string | number) {
-    const filters = age
-      ? { age: +age }
+  setPatientFilters(age: string | number, date: string) {
+    const filters = (age || date)
+      ? { age: +age, date: date || null }
       : null;
     this.storeService.setPatientFilters(filters);
+    this.filters = filters;
   }
 }
 

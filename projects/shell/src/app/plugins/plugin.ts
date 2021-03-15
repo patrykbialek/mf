@@ -1,6 +1,6 @@
 import { LoadRemoteModuleOptions } from '@angular-architects/module-federation';
 
-export type PluginOptions = LoadRemoteModuleOptions & {
+export type PluginOption = LoadRemoteModuleOptions & {
     displayName: string;
     componentName: string;
 };
