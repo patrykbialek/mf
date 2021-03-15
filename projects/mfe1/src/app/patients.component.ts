@@ -1,7 +1,6 @@
 import { filter, tap } from 'rxjs/operators';
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { MfeApiService } from '@shared-lib';
 
 @Component({
@@ -23,13 +22,10 @@ export class PatientsComponent implements OnInit {
   filteredPersons = this.persons;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private mfeApiService: MfeApiService,
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(console.log);
-
     this.mfeApiService.patientFilters$
       .pipe(
         tap(data => console.log('patients', data)),
@@ -40,7 +36,7 @@ export class PatientsComponent implements OnInit {
         this.filteredPersons = this.persons.filter(person => person.age === filters.age);
       });
 
-    if (history.state.data && history.state.data.filters && history.state.data.filters.age) {
+    if (history.state && history.state.data && history.state.data.filters && history.state.data.filters.age) {
       this.filteredPersons = this.persons.filter(person => +person.age === +history.state.data.filters.age);
     }
   }

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { StoreService } from "./store.service";
+import { StoreService } from "@shared-lib";
 
 @Injectable({
   providedIn: 'root'
