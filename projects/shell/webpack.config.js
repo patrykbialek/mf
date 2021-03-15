@@ -25,10 +25,10 @@ module.exports = {
         "@angular/common": { singleton: true, strictVersion: true },
         "@angular/router": { singleton: true, strictVersion: true },
 
-        // "@shared-lib": {
-        //   singleton: true,
-        //   import: "projects/shared-lib/src/public-api",
-        // },
+        "@shared-lib": {
+          singleton: true,
+          import: "projects/shared-lib/src/public-api",
+        },
 
         // Uncomment for sharing lib of an Angular CLI or Nx workspace
         ...sharedMappings.getDescriptors(),
