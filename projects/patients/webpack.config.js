@@ -24,7 +24,6 @@ module.exports = {
       exposes: {
         "./Patients": "./projects/patients/src/app/patients.component.ts",
         "./Module": "./projects/patients/src/app/app.module.ts",
-
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },

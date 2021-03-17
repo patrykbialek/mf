@@ -1,0 +1,31 @@
+{
+  "hosting": [
+    {
+      "target": "meetings",
+      "public": "dist/meetings",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "patients",
+      "public": "dist/patients",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "shell",
+      "public": "dist/shell",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}

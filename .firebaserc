@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "ods-patients"
+  },
+  "targets": {
+    "ods-patients": {
+      "hosting": {
+        "meetings": [
+          "mvui"
+        ],
+        "patients": [
+          "ods-patient"
+        ],
+        "shell": [
+          "ods-shell"
+        ]
+      }
+    }
+  }
+}

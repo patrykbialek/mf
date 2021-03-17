@@ -7,7 +7,7 @@ export class LookupService {
     lookup(): Promise<PluginOption[]> {
         return Promise.resolve([
             {
-                remoteEntry: 'http://localhost:3000/remoteEntry.js',
+                remoteEntry: 'https://ods-patient.web.app/remoteEntry.js',
                 remoteName: 'patients',
                 exposedModule: './Patients',
 
@@ -15,7 +15,7 @@ export class LookupService {
                 componentName: 'PatientsComponent'
             },
             {
-                remoteEntry: 'http://localhost:3001/remoteEntry.js',
+                remoteEntry: 'https://ods-meeting.web.app/remoteEntry.js',
                 remoteName: 'meetings',
                 exposedModule: './Meetings',
 

@@ -24,7 +24,6 @@
               "projects/shell/src/assets"
             ],
             "styles": [
-              "projects/shell/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/shell/webpack.config.js"
@@ -81,7 +80,6 @@
               "projects/shell/src/assets"
             ],
             "styles": [
-              "projects/shell/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/shell/webpack.config.js"
@@ -135,7 +133,6 @@
               "projects/patients/src/assets"
             ],
             "styles": [
-              "projects/patients/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/patients/webpack.config.js"
@@ -192,7 +189,6 @@
               "projects/patients/src/assets"
             ],
             "styles": [
-              "projects/patients/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/patients/webpack.config.js"
@@ -246,7 +242,6 @@
               "projects/meetings/src/assets"
             ],
             "styles": [
-              "projects/meetings/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/meetings/webpack.config.js"
@@ -315,7 +310,6 @@
               "projects/meetings/src/assets"
             ],
             "styles": [
-              "projects/meetings/src/styles.css"
             ],
             "scripts": [],
             "extraWebpackConfig": "projects/meetings/webpack.config.js"

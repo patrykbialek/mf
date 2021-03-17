@@ -52,12 +52,12 @@ const shellConfig = {
 };
 
 const mfe1Config = {
-  entry: ["./projects/mfe1/src/polyfills.ts", "./projects/mfe1/src/main.ts"],
+  entry: ["./projects/patients/src/polyfills.ts", "./projects/patients/src/main.ts"],
   resolve: {
     mainFields: ["browser", "module", "main"]
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist/mfe1"),
+    contentBase: path.join(__dirname, "dist/patients"),
     port: 3000
   },  
   module: {
@@ -67,47 +67,47 @@ const mfe1Config = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "mfe1",
-      library: { type: "var", name: "mfe1" },
+      name: "patients",
+      library: { type: "var", name: "patients" },
       filename: "remoteEntry.js",
       exposes: {
-        './Download': './projects/mfe1/src/app/download.component.ts',
-        './Upload': './projects/mfe1/src/app/upload.component.ts'
+        "./Patients": "./projects/patients/src/app/patients.component.ts",
+        "./Module": "./projects/patients/src/app/app.module.ts",
       },
       shared: ["@angular/core", "@angular/common", "@angular/router"]
     }),
     new AotPlugin({
       skipCodeGeneration: false,
-      tsConfigPath: "./projects/mfe1/tsconfig.app.json",
+      tsConfigPath: "./projects/patients/tsconfig.app.json",
       directTemplateLoading: true,
       entryModule: path.resolve(
         __dirname,
-        "./projects/mfe1/src/app/app.module#AppModule"
+        "./projects/patients/src/app/app.module#AppModule"
       )
     }),
     new CopyPlugin([
-      { from: 'projects/mfe1/src/assets', to: 'assets' },
+      { from: 'projects/patients/src/assets', to: 'assets' },
     ]),    
     new HtmlWebpackPlugin({
-      template: "./projects/mfe1/src/index.html"
+      template: "./projects/patients/src/index.html"
     })
   ],
   output: {
     publicPath: "http://localhost:3000/",
     filename: "[name].js",
-    path: __dirname + "/dist/mfe1",
+    path: __dirname + "/dist/patients",
     chunkFilename: "[id].[chunkhash].js"
   },
   mode: "production"
 };
 
 const mfe2Config = {
-  entry: ["./projects/mfe2/src/polyfills.ts", "./projects/mfe2/src/main.ts"],
+  entry: ["./projects/meetings/src/polyfills.ts", "./projects/meetings/src/main.ts"],
   resolve: {
     mainFields: ["browser", "module", "main"]
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist/mfe2"),
+    contentBase: path.join(__dirname, "dist/meetings"),
     port: 3000
   },  
   module: {
@@ -117,35 +117,36 @@ const mfe2Config = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "mfe2",
-      library: { type: "var", name: "mfe2" },
+      name: "meetings",
+      library: { type: "var", name: "meetings" },
       filename: "remoteEntry.js",
       exposes: {
-        './Analyze': './projects/mfe2/src/app/analyze.component.ts',
-        './Enrich': './projects/mfe2/src/app/enrich.component.ts'
+        "./Meetings": "./projects/meetings/src/app/meetings.component.ts",
+        "./Module": "./projects/meetings/src/app/app.module.ts",
+        "./PatientMeetings": "./projects/meetings/src/app/patient-meetings.component.ts"
       },
       shared: ["@angular/core", "@angular/common", "@angular/router"]
     }),
     new AotPlugin({
       skipCodeGeneration: false,
-      tsConfigPath: "./projects/mfe2/tsconfig.app.json",
+      tsConfigPath: "./projects/meetings/tsconfig.app.json",
       directTemplateLoading: true,
       entryModule: path.resolve(
         __dirname,
-        "./projects/mfe2/src/app/app.module#AppModule"
+        "./projects/meetings/src/app/app.module#AppModule"
       )
     }),
     new CopyPlugin([
-      { from: 'projects/mfe2/src/assets', to: 'assets' },
+      { from: 'projects/meetings/src/assets', to: 'assets' },
     ]),    
     new HtmlWebpackPlugin({
-      template: "./projects/mfe2/src/index.html"
+      template: "./projects/meetings/src/index.html"
     })
   ],
   output: {
     publicPath: "http://localhost:3001/",
     filename: "[name].js",
-    path: __dirname + "/dist/mfe2",
+    path: __dirname + "/dist/meetings",
     chunkFilename: "[id].[chunkhash].js"
   },
   mode: "production"
