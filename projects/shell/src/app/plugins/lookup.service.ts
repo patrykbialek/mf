@@ -8,6 +8,7 @@ export class LookupService {
         return Promise.resolve([
             {
                 remoteEntry: 'https://ods-patient.web.app/remoteEntry.js',
+                // remoteEntry: 'http://localhost:3000/remoteEntry.js',
                 remoteName: 'patients',
                 exposedModule: './Patients',
 
@@ -16,6 +17,7 @@ export class LookupService {
             },
             {
                 remoteEntry: 'https://ods-meetings.web.app/remoteEntry.js',
+                // remoteEntry: 'http://localhost:3001/remoteEntry.js',
                 remoteName: 'meetings',
                 exposedModule: './Meetings',
 

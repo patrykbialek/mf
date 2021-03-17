@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -13,13 +14,15 @@ import { PatientMeetingsComponent } from './patient-meetings.component';
     BrowserModule,
     CommonModule,
     RouterModule.forChild(MFE2_ROUTES),
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
     MeetingsComponent,
     PatientMeetingsComponent,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [
     AppComponent
   ],

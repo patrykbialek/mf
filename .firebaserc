@@ -6,7 +6,7 @@
     "ods-patients": {
       "hosting": {
         "meetings": [
-          "mvui"
+          "ods-meeting"
         ],
         "patients": [
           "ods-patient"

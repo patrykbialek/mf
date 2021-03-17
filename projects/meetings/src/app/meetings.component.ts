@@ -1,5 +1,6 @@
 import { filter, tap } from 'rxjs/operators';
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MfeApiService } from '@shared-lib';
 
@@ -19,21 +20,21 @@ import { MfeApiService } from '@shared-lib';
 
 export class MeetingsComponent implements OnInit {
 
-    meetings = [
-        { name: 'My meeting in the future', date: '04/03/2021' },
-        { name: 'My old meeting', date: '02/03/2021' },
-        { name: 'My newest meeting 1', date: '03/15/2021' },
-        { name: 'My newest meeting 2', date: '03/16/2021' },
-        { name: 'My newest meeting 3', date: '03/16/2021' },
-        { name: 'My newest meeting 4', date: '03/16/2021' },
-    ];
-    filteredMeetings = this.meetings;
+    meetings;
+    filteredMeetings;
 
     constructor(
+        private http: HttpClient,
         private mfeApiService: MfeApiService,
     ) { }
 
     ngOnInit() {
+        this.http.get('https://private-7e78ec-ods1.apiary-mock.com/meetings')
+            .subscribe(meetings => {
+                this.meetings = meetings;
+                this.filteredMeetings = this.meetings;
+            });
+
         this.mfeApiService.patientFilters$
             .pipe(
                 tap(() => this.filteredMeetings = this.meetings),

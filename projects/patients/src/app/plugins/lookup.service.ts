@@ -16,7 +16,9 @@ export class LookupService {
             //     componentName: 'PatientsComponent'
             // },
             {
-                remoteEntry: 'https://ods-meetings.web.app/remoteEntry.js',
+                remoteEntry: 'https://ods-meeting.web.app/remoteEntry.js',
+                // remoteEntry: 'http://localhost:3001/remoteEntry.js',
+                // remoteEntry: 'https://mvui.web.app/remoteEntry.js',
                 remoteName: 'meetings',
                 exposedModule: './Meetings',
 

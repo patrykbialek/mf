@@ -1,9 +1,9 @@
 
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { MfeApiService } from '@shared-lib';
 
 import { AppComponent } from './app.component';
 import { MFE1_ROUTES } from './app.routes';
@@ -15,17 +15,16 @@ import { PluginProxyComponent } from './plugins/plugin-proxy.component';
     BrowserModule,
     CommonModule,
     RouterModule.forChild(MFE1_ROUTES),
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
     PatientsComponent,
     PluginProxyComponent,
   ],
-  providers: [
-    MfeApiService,
-  ],
+  providers: [],
   bootstrap: [
-      AppComponent
+    AppComponent
   ]
 })
 export class AppModule { }
