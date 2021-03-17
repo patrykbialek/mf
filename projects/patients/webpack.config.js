@@ -11,19 +11,20 @@ sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), [
 
 module.exports = {
   output: {
-    uniqueName: "mfe2"
+    uniqueName: "patients",
   },
   optimization: {
     // Only needed to bypass a temporary bug
-    runtimeChunk: false
+    runtimeChunk: false,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "mfe2",
+      name: "patients",
       filename: "remoteEntry.js",
       exposes: {
-        './Meetings': './projects/mfe2/src/app/meetings.component.ts',
-        "./Module": "./projects/mfe2/src/app/app.module.ts",
+        "./Patients": "./projects/patients/src/app/patients.component.ts",
+        "./Module": "./projects/patients/src/app/app.module.ts",
+
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },

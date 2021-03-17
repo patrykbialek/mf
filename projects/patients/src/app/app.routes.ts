@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { PatientsComponent } from './patients.component';
+import { PatientsWrapperComponent } from './patients.component';
 
 export const MFE1_ROUTES: Routes = [
     {
         path: '',
-        component: PatientsComponent,
+        component: PatientsWrapperComponent,
         pathMatch: 'full',
     },
 ];

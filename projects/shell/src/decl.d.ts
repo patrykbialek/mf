@@ -1,5 +1,5 @@
-declare module 'mfe1/Component';
-declare module 'mfe1/Module';
+declare module 'patients/Component';
+declare module 'patients/Module';
 
 declare const __webpack_init_sharing__: (shareScope: string) => Promise<void>;
 declare const __webpack_share_scopes__: { default: string };

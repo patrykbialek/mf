@@ -19,7 +19,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {},
+      remotes: {
+        'patients': "patients@http://localhost:3000/remoteEntry.js"
+      },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
         "@angular/common": { singleton: true, strictVersion: true },

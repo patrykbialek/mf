@@ -6,7 +6,7 @@
 
 <section>
     <header>
-        <h1>Settings</h1>
+        <h1>Settings from HOST</h1>
     </header>
 
     <form (ngSubmit)="setPatientFilters(age.value, date.value)" novalidate>
@@ -17,9 +17,9 @@
 
     <div class="vertical-menu">
         <h2>App menu</h2>
-        <a [routerLink]="['/patients']" routerLinkActive="router-link-active" [state]="{ data: { filters: filters } }" >Patients</a>
+        <a [routerLink]="['/patients']" routerLinkActive="router-link-active">Patients</a>
         <a [routerLink]="['/meetings']" routerLinkActive="router-link-active">Meetings</a>
-        <a [routerLink]="['/config']" routerLinkActive="router-link-active" >Config</a>
+        <a [routerLink]="['/config']" routerLinkActive="router-link-active">Config</a>
     </div>
 </section>
 

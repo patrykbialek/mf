@@ -1,5 +1,6 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from 'rxjs';
+
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,12 @@ export class StoreService {
   patientFilters$ = this.patientFiltersSubject.asObservable();
 
   setPatientFilters(filter: any) {
-    this.patientFiltersSubject.next(filter);
+    const currentFilter = this.patientFiltersSubject.value;
+    const newFilter = {
+      ...currentFilter,
+      age: filter?.age || currentFilter?.age,
+      date: filter?.date || currentFilter?.date,
+    };
+    this.patientFiltersSubject.next(newFilter);
   }
 }

@@ -114,38 +114,38 @@
         }
       }
     },
-    "mfe1": {
+    "patients": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/mfe1",
-      "sourceRoot": "projects/mfe1/src",
+      "root": "projects/patients",
+      "sourceRoot": "projects/patients/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/mfe1",
-            "index": "projects/mfe1/src/index.html",
-            "main": "projects/mfe1/src/main.ts",
-            "polyfills": "projects/mfe1/src/polyfills.ts",
-            "tsConfig": "projects/mfe1/tsconfig.app.json",
+            "outputPath": "dist/patients",
+            "index": "projects/patients/src/index.html",
+            "main": "projects/patients/src/main.ts",
+            "polyfills": "projects/patients/src/polyfills.ts",
+            "tsConfig": "projects/patients/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/mfe1/src/favicon.ico",
-              "projects/mfe1/src/assets"
+              "projects/patients/src/favicon.ico",
+              "projects/patients/src/assets"
             ],
             "styles": [
-              "projects/mfe1/src/styles.css"
+              "projects/patients/src/styles.css"
             ],
             "scripts": [],
-            "extraWebpackConfig": "projects/mfe1/webpack.config.js"
+            "extraWebpackConfig": "projects/patients/webpack.config.js"
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/mfe1/src/environments/environment.ts",
-                  "with": "projects/mfe1/src/environments/environment.prod.ts"
+                  "replace": "projects/patients/src/environments/environment.ts",
+                  "with": "projects/patients/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -156,55 +156,55 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "extraWebpackConfig": "projects/mfe1/webpack.prod.config.js"
+              "extraWebpackConfig": "projects/patients/webpack.prod.config.js"
             }
           }
         },
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "mfe1:build",
+            "browserTarget": "patients:build",
             "port": 3000,
-            "extraWebpackConfig": "projects/mfe1/webpack.config.js"
+            "extraWebpackConfig": "projects/patients/webpack.config.js"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mfe1:build:production",
-              "extraWebpackConfig": "projects/mfe1/webpack.prod.config.js"
+              "browserTarget": "patients:build:production",
+              "extraWebpackConfig": "projects/patients/webpack.prod.config.js"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mfe1:build"
+            "browserTarget": "patients:build"
           }
         },
         "test": {
           "builder": "ngx-build-plus:karma",
           "options": {
-            "main": "projects/mfe1/src/test.ts",
-            "polyfills": "projects/mfe1/src/polyfills.ts",
-            "tsConfig": "projects/mfe1/tsconfig.spec.json",
-            "karmaConfig": "projects/mfe1/karma.conf.js",
+            "main": "projects/patients/src/test.ts",
+            "polyfills": "projects/patients/src/polyfills.ts",
+            "tsConfig": "projects/patients/tsconfig.spec.json",
+            "karmaConfig": "projects/patients/karma.conf.js",
             "assets": [
-              "projects/mfe1/src/favicon.ico",
-              "projects/mfe1/src/assets"
+              "projects/patients/src/favicon.ico",
+              "projects/patients/src/assets"
             ],
             "styles": [
-              "projects/mfe1/src/styles.css"
+              "projects/patients/src/styles.css"
             ],
             "scripts": [],
-            "extraWebpackConfig": "projects/mfe1/webpack.config.js"
+            "extraWebpackConfig": "projects/patients/webpack.config.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/mfe1/tsconfig.app.json",
-              "projects/mfe1/tsconfig.spec.json",
-              "projects/mfe1/e2e/tsconfig.json"
+              "projects/patients/tsconfig.app.json",
+              "projects/patients/tsconfig.spec.json",
+              "projects/patients/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -214,49 +214,49 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/mfe1/e2e/protractor.conf.js",
-            "devServerTarget": "mfe1:serve"
+            "protractorConfig": "projects/patients/e2e/protractor.conf.js",
+            "devServerTarget": "patients:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mfe1:serve:production"
+              "devServerTarget": "patients:serve:production"
             }
           }
         }
       }
     },
-    "mfe2": {
+    "meetings": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/mfe2",
-      "sourceRoot": "projects/mfe2/src",
+      "root": "projects/meetings",
+      "sourceRoot": "projects/meetings/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/mfe2",
-            "index": "projects/mfe2/src/index.html",
-            "main": "projects/mfe2/src/main.ts",
-            "polyfills": "projects/mfe2/src/polyfills.ts",
-            "tsConfig": "projects/mfe2/tsconfig.app.json",
+            "outputPath": "dist/meetings",
+            "index": "projects/meetings/src/index.html",
+            "main": "projects/meetings/src/main.ts",
+            "polyfills": "projects/meetings/src/polyfills.ts",
+            "tsConfig": "projects/meetings/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/mfe2/src/favicon.ico",
-              "projects/mfe2/src/assets"
+              "projects/meetings/src/favicon.ico",
+              "projects/meetings/src/assets"
             ],
             "styles": [
-              "projects/mfe2/src/styles.css"
+              "projects/meetings/src/styles.css"
             ],
             "scripts": [],
-            "extraWebpackConfig": "projects/mfe2/webpack.config.js"
+            "extraWebpackConfig": "projects/meetings/webpack.config.js"
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/mfe2/src/environments/environment.ts",
-                  "with": "projects/mfe2/src/environments/environment.prod.ts"
+                  "replace": "projects/meetings/src/environments/environment.ts",
+                  "with": "projects/meetings/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -279,55 +279,55 @@
                   "maximumError": "10kb"
                 }
               ],
-              "extraWebpackConfig": "projects/mfe2/webpack.prod.config.js"
+              "extraWebpackConfig": "projects/meetings/webpack.prod.config.js"
             }
           }
         },
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "mfe2:build",
-            "extraWebpackConfig": "projects/mfe2/webpack.config.js",
+            "browserTarget": "meetings:build",
+            "extraWebpackConfig": "projects/meetings/webpack.config.js",
             "port": 3001
           },
           "configurations": {
             "production": {
-              "browserTarget": "mfe2:build:production",
-              "extraWebpackConfig": "projects/mfe2/webpack.prod.config.js"
+              "browserTarget": "meetings:build:production",
+              "extraWebpackConfig": "projects/meetings/webpack.prod.config.js"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mfe2:build"
+            "browserTarget": "meetings:build"
           }
         },
         "test": {
           "builder": "ngx-build-plus:karma",
           "options": {
-            "main": "projects/mfe2/src/test.ts",
-            "polyfills": "projects/mfe2/src/polyfills.ts",
-            "tsConfig": "projects/mfe2/tsconfig.spec.json",
-            "karmaConfig": "projects/mfe2/karma.conf.js",
+            "main": "projects/meetings/src/test.ts",
+            "polyfills": "projects/meetings/src/polyfills.ts",
+            "tsConfig": "projects/meetings/tsconfig.spec.json",
+            "karmaConfig": "projects/meetings/karma.conf.js",
             "assets": [
-              "projects/mfe2/src/favicon.ico",
-              "projects/mfe2/src/assets"
+              "projects/meetings/src/favicon.ico",
+              "projects/meetings/src/assets"
             ],
             "styles": [
-              "projects/mfe2/src/styles.css"
+              "projects/meetings/src/styles.css"
             ],
             "scripts": [],
-            "extraWebpackConfig": "projects/mfe2/webpack.config.js"
+            "extraWebpackConfig": "projects/meetings/webpack.config.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/mfe2/tsconfig.app.json",
-              "projects/mfe2/tsconfig.spec.json",
-              "projects/mfe2/e2e/tsconfig.json"
+              "projects/meetings/tsconfig.app.json",
+              "projects/meetings/tsconfig.spec.json",
+              "projects/meetings/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -337,12 +337,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/mfe2/e2e/protractor.conf.js",
-            "devServerTarget": "mfe2:serve"
+            "protractorConfig": "projects/meetings/e2e/protractor.conf.js",
+            "devServerTarget": "meetings:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mfe2:serve:production"
+              "devServerTarget": "meetings:serve:production"
             }
           }
         }

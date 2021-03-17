@@ -8,19 +8,19 @@ export class LookupService {
         return Promise.resolve([
             {
                 remoteEntry: 'http://localhost:3000/remoteEntry.js',
-                remoteName: 'mfe1',
+                remoteName: 'patients',
                 exposedModule: './Patients',
 
                 displayName: 'Patients',
-                componentName: 'PatientsComponent'
+                componentName: 'PatientsWrapperComponent'
             },
             {
                 remoteEntry: 'http://localhost:3001/remoteEntry.js',
-                remoteName: 'mfe2',
+                remoteName: 'meetings',
                 exposedModule: './Meetings',
 
                 displayName: 'Meetings',
-                componentName: 'MeetingsComponent'
+                componentName: 'MeetingsWrapperComponent'
             },
         ] as PluginOption[]);
     }

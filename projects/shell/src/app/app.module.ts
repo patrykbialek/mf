@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,8 +9,8 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { ConfigComponent } from './config/config.component';
 import { HomeComponent } from './home/home.component';
-import { MeetingsComponent } from './meetings/meetings.component';
 import { PluginProxyComponent } from './plugins/plugin-proxy.component';
+import * as wrappers from './wrappers';
 
 @NgModule({
   imports: [
@@ -23,12 +24,13 @@ import { PluginProxyComponent } from './plugins/plugin-proxy.component';
     PluginProxyComponent,
     ConfigComponent,
     HomeComponent,
-    MeetingsComponent
+
+    ...wrappers.wrappers
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    MeetingsComponent
+    ...wrappers.wrappers
   ]
 })
 export class AppModule { }

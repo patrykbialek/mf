@@ -1,25 +1,23 @@
-
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { MfeApiService } from '@shared-lib';
 
 import { AppComponent } from './app.component';
-import { MFE1_ROUTES } from './app.routes';
-import { PatientsComponent } from './patients.component';
+import { MFE2_ROUTES } from './app.routes';
+import { MeetingsWrapperComponent } from './meetings.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forChild(MFE1_ROUTES),
+    CommonModule,
+    RouterModule.forChild(MFE2_ROUTES),
   ],
   declarations: [
     AppComponent,
-    PatientsComponent,
+    MeetingsWrapperComponent,
   ],
-  providers: [
-    MfeApiService,
-  ],
+  providers: [],
   bootstrap: [
       AppComponent
   ]

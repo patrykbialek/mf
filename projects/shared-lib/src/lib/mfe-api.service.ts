@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { StoreService } from "@shared-lib";
+import { Injectable } from '@angular/core';
+import { StoreService } from '@shared-lib';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +12,7 @@ export class MfeApiService {
     private storeService: StoreService,
   ) { }
 
-
+  setPatientFilters(filter: any) {
+    this.storeService.setPatientFilters(filter);
+  }
 }

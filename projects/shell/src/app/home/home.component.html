@@ -1,4 +1,3 @@
-<ng-container *ngFor="let p of workflow; let last = last">
-    <plugin-proxy [option]="p"></plugin-proxy>
-    <i *ngIf="!last" class="arrow right" style=""></i>
+<ng-container *ngFor="let plugin of workflow">
+    <plugin-proxy [option]="plugin"></plugin-proxy>
 </ng-container>
