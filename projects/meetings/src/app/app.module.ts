@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MFE2_ROUTES } from './app.routes';
-import { MeetingsWrapperComponent } from './meetings.component';
+import { MeetingsComponent } from './meetings.component';
+import { PatientMeetingsComponent } from './patient-meetings.component';
 
 @NgModule({
   imports: [
@@ -15,11 +16,16 @@ import { MeetingsWrapperComponent } from './meetings.component';
   ],
   declarations: [
     AppComponent,
-    MeetingsWrapperComponent,
+    MeetingsComponent,
+    PatientMeetingsComponent,
   ],
   providers: [],
   bootstrap: [
-      AppComponent
+    AppComponent
+  ],
+  exports: [
+    MeetingsComponent,
+    PatientMeetingsComponent,
   ]
 })
 export class AppModule { }

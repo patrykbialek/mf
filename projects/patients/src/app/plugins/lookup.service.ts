@@ -22,6 +22,14 @@ export class LookupService {
                 displayName: 'Meetings',
                 componentName: 'MeetingsComponent'
             },
+            {
+                remoteEntry: 'http://localhost:3001/remoteEntry.js',
+                remoteName: 'meetings',
+                exposedModule: './Meetings',
+
+                displayName: 'PatientMeetings',
+                componentName: 'PatientMeetingsComponent'
+            },
         ] as PluginOption[]);
     }
 }

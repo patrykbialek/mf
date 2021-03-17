@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { MeetingsWrapperComponent } from './meetings.component';
+import { MeetingsComponent } from './meetings.component';
 
 export const MFE2_ROUTES: Routes = [
-    { path: '', component: MeetingsWrapperComponent, pathMatch: 'full'}
+    { path: '', component: MeetingsComponent, pathMatch: 'full'}
 ];

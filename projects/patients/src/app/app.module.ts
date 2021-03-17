@@ -7,7 +7,8 @@ import { MfeApiService } from '@shared-lib';
 
 import { AppComponent } from './app.component';
 import { MFE1_ROUTES } from './app.routes';
-import { PatientsWrapperComponent } from './patients.component';
+import { PatientsComponent } from './patients.component';
+import { PluginProxyComponent } from './plugins/plugin-proxy.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { PatientsWrapperComponent } from './patients.component';
   ],
   declarations: [
     AppComponent,
-    PatientsWrapperComponent,
+    PatientsComponent,
+    PluginProxyComponent,
   ],
   providers: [
     MfeApiService,

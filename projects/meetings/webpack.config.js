@@ -22,8 +22,9 @@ module.exports = {
       name: "meetings",
       filename: "remoteEntry.js",
       exposes: {
-        './Meetings': './projects/meetings/src/app/meetings.component.ts',
+        "./Meetings": "./projects/meetings/src/app/meetings.component.ts",
         "./Module": "./projects/meetings/src/app/app.module.ts",
+        "./PatientMeetings": "./projects/meetings/src/app/patient-meetings.component.ts"
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
