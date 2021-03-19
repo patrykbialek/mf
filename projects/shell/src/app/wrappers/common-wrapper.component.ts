@@ -21,5 +21,6 @@ export class CommonWrapperComponent {
     async loadModule(componentName: string): Promise<void> {
         const plugins: PluginOption[] = await this.lookupService.lookup();
         this.plugin = plugins.find(plugin => plugin.displayName === componentName);
+        console.log('plugin', this.plugin)
     }
 }

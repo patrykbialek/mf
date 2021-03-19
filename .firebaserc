@@ -1,20 +1,5 @@
 {
   "projects": {
-    "default": "ods-patients"
-  },
-  "targets": {
-    "ods-patients": {
-      "hosting": {
-        "meetings": [
-          "ods-meeting"
-        ],
-        "patients": [
-          "ods-patient"
-        ],
-        "shell": [
-          "ods-shell"
-        ]
-      }
-    }
+    "default": "meetings-ods"
   }
 }

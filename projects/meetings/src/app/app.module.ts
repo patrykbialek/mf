@@ -21,8 +21,7 @@ import { PatientMeetingsComponent } from './patient-meetings.component';
     MeetingsComponent,
     PatientMeetingsComponent,
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [
     AppComponent
   ],

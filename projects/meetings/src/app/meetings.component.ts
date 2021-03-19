@@ -21,7 +21,7 @@ import { MfeApiService } from '@shared-lib';
 export class MeetingsComponent implements OnInit {
 
     meetings;
-    filteredMeetings;
+    filteredMeetings = [];
 
     constructor(
         private http: HttpClient,
@@ -32,17 +32,20 @@ export class MeetingsComponent implements OnInit {
         this.http.get('https://private-7e78ec-ods1.apiary-mock.com/meetings')
             .subscribe(meetings => {
                 this.meetings = meetings;
-                this.filteredMeetings = this.meetings;
+                if (!this.filteredMeetings || this.filteredMeetings.length === 0) {
+                    this.filteredMeetings = this.meetings;
+                }
+
+                this.mfeApiService.patientFilters$
+                    .pipe(
+                        tap(() => this.filteredMeetings = this.meetings),
+                        filter(filters => Boolean(filters && filters.date)),
+                    )
+                    .subscribe((filters: any) => {
+                        this.filteredMeetings = this.meetings && this.meetings.filter(meeting => meeting.date === filters.date) || [];
+                    });
             });
 
-        this.mfeApiService.patientFilters$
-            .pipe(
-                tap(() => this.filteredMeetings = this.meetings),
-                filter(filters => Boolean(filters && filters.date)),
-            )
-            .subscribe((filters: any) => {
-                this.filteredMeetings = this.meetings.filter(meeting => meeting.date === filters.date);
-            });
     }
 
     setMeetingDate() {
